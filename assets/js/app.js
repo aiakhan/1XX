@@ -1,79 +1,67 @@
+// JavaScript Document
 
 function init() {
+    window.addEventListener('scroll', function (e) {
 
+        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
 
+            shrinkOn = 300,
 
-     window.addEventListener('scroll', function (e) {
+            header = document.querySelector("header");
 
-          var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+        if (distanceY > shrinkOn) {
 
-               shrinkOn = 300,
+            classie.add(header, "smaller");
 
-               header = document.querySelector("header");
+        } else {
 
-          if (distanceY > shrinkOn) {
+            if (classie.has(header, "smaller")) {
 
-               classie.add(header, "smaller");
+                classie.remove(header, "smaller");
 
-          } else {
+            }
 
-               if (classie.has(header, "smaller")) {
+        }
 
-                    classie.remove(header, "smaller");
+    });
 
-               }
+    $.ajax({
 
-          }
+        method: 'GET',
 
-     });
+        url: 'assets/data/menu.json',
 
+        dataType: 'json',
 
+        success: function (data) {
+            console.log('all good');
 
-     $.ajax({
+            console.log(data.menu.length);
 
-          method: 'GET',
+            console.log(data.menu);
 
-          url: 'assets/data/menu.json',
+            if (data.menu.length > 0) {
+                data.menu.forEach(function (data) {
+                    console.log(data.MenuName);
 
-          dataType: 'json',
+                    console.log(data.MenuLink)
 
-          success: function (data) {
-			  console.log('all good');
-			  console.log(data.menu.leading);
-			  console.log(data.men);
-			  if (data.men.length> 0){
-				  
-				  data.menu.forEach(function(dat){
-					 console.log(data.MenuName);
-					 console.log(data.MenuLink);
-					  
-					 $('nav').append('<a href="' + data.MenuLink +'">' + data.MenuName+'</a>');
-			  });
-				  
-				  
-			  }
-			  
-									
-									
-		  },
-		 
+                    $('nav').append('<a href="' + data.MenuLink + '">' + data.MenuName + '</a>');
 
- 
-          error: function () {
+                });
 
-               console.log('all is not good');
+            }
 
-          }
+        },
 
-     });
+        error: function () {
 
+            console.log('all is not good');
 
+        }
+
+    });
 
 }
+
 window.onload = init();
-
-
-
-
-
-

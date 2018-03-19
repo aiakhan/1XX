@@ -9,7 +9,10 @@ footer {
     min-height: 350px;
 
     font-family: 'Open Sans', sans-serif;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 102-1
 }
 
 .footerleft {
@@ -17,7 +20,10 @@ footer {
     margin-top: 50px;
 
     padding: 0 36px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 102-1
 }
 
 .logofooter {
@@ -29,9 +35,13 @@ footer {
     color: #fff;
 
     font-weight: 700;
+<<<<<<< HEAD
 
 }
 
+=======
+}
+>>>>>>> 102-1
 .footerleft p {
 
     color: #fff;
@@ -63,6 +73,7 @@ footer {
     list-style-type: none;
 
     padding-left: 0px;
+<<<<<<< HEAD
 
     margin-left: 2px;
 
@@ -90,6 +101,35 @@ footer {
 
 }
 
+=======
+
+    margin-left: 2px;
+
+}
+
+.footer-ul li {
+
+    line-height: 29px;
+
+    font-size: 12px;
+
+}
+
+.footer-ul li a {
+
+    color: #a0a3a4;
+
+    transition: color 0.2s linear 0s, background 0.2s linear 0s;
+
+}
+
+.footer-ul i {
+
+    margin-right: 10px;
+
+}
+
+>>>>>>> 102-1
 .footer-ul li a:hover {
 
     transition: color 0.2s linear 0s, background 0.2s linear 0s;

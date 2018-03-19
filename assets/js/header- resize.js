@@ -9,6 +9,7 @@
  * MIT license
 
  * 
+
  * classie.has( elem, 'my-class' ) -> true/false
 
  * classie.add( elem, 'my-new-class' )
@@ -19,25 +20,55 @@
 
  */
 
+
+
 /*jshint browser: true, strict: true, undef: true, unused: true */
 
 /*global define: false */
 
+
+
 (function (window) {
 
+<<<<<<< HEAD
    'use strict';
 
     // class helper functions from bonzo https://github.com/ded/bonzo
 
+=======
+
+
+    'use strict';
+
+
+
+    // class helper functions from bonzo https://github.com/ded/bonzo
+
+
+
+>>>>>>> 102-1
     function classReg(className) {
 
         return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
 
     }
 
+<<<<<<< HEAD
     var hasClass, addClass, removeClass;
 
 
+=======
+
+
+    // classList support for class management
+
+    // altho to be fair, the api sucks because it won't accept multiple classes at once
+
+    var hasClass, addClass, removeClass;
+
+
+
+>>>>>>> 102-1
     if ('classList' in document.documentElement) {
 
         hasClass = function (elem, c) {

@@ -1,7 +1,5 @@
 /* CSS Document */
 
-
-
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 
 footer {
@@ -11,7 +9,6 @@ footer {
     min-height: 350px;
 
     font-family: 'Open Sans', sans-serif;
-
 }
 
 .footerleft {
@@ -19,7 +16,6 @@ footer {
     margin-top: 50px;
 
     padding: 0 36px;
-
 }
 
 .logofooter {
@@ -31,9 +27,7 @@ footer {
     color: #fff;
 
     font-weight: 700;
-
 }
-
 .footerleft p {
 
     color: #fff;

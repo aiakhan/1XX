@@ -1,10 +1,8 @@
 // JavaScript Document
-
 window.onload = init();
 
 function init() {
-
-    window.addEventListener('scroll', function (e) {
+	window.addEventListener('scroll', function (e) {
         var distanceY = window.pageYOffset || document.documentElement.scrollTop,
             shrinkOn = 300,
             header = document.querySelector("header");
@@ -17,7 +15,6 @@ function init() {
         }
     });
 
-
     $.ajax({
         method: 'GET',
         url: 'assets/data/menu.json',
@@ -27,12 +24,12 @@ function init() {
             var menu = menuBuilder(data.menu);
 
             $('nav').append(menu);
+			$("#loaderDiv").fadeOut("slow");
 
         },
         error: function () {
 
             console.log('all is not good');
-
         }
     });
 

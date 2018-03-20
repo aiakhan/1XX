@@ -32,13 +32,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
   vertical-align: baseline; }
 
-
-
 body {
 
   line-height: 1; }
-
-
 
 h1, h2, h3, h4, h5, h6 {
 
@@ -46,29 +42,19 @@ h1, h2, h3, h4, h5, h6 {
 
   font-weight: normal; }
 
-
-
 ol, ul {
 
   list-style: none; }
 
- 
-
-
-
 blockquote {
 
   quotes: none; }
-
-
 
 blockquote:before, blockquote:after {
 
   content: '';
 
   content: none; }
-
-
 
 del {
 
@@ -83,8 +69,6 @@ table {
   border-collapse: collapse;
 
   border-spacing: 0; }
-
-
 
 a img {
 
@@ -128,8 +112,6 @@ body {
 
   line-height: 1.8; }
 
-
-
 /* Headings */
 
 h1, h2, h3, h4, h5, h6 {
@@ -138,20 +120,15 @@ h1, h2, h3, h4, h5, h6 {
 
   font-weight: 300; }
 
-
-
 a {
 
   text-decoration: none;
 
   color: #3cb5f9; }
 
-
-
 a:hover {
 
   color: #0793e2; }
-
 
 
 /* =Template
@@ -182,8 +159,6 @@ a:hover {
 
   padding: 0 30px; }
 
-
-
 section {
 
   padding: 60px 0; }
@@ -207,8 +182,6 @@ section {
     background-color: #3cb5f9;
 
     color: white; }
-
-
 
 /* =Info Bar
 
@@ -255,9 +228,6 @@ section {
     float: right;
 
     text-align: right; }
-
-
-
 /* =Header
 
 -------------------------------------------------------------- */
@@ -365,10 +335,11 @@ header {
       font-size: 30px; }
 
     header.smaller nav a {
+		/*
+		line-height: 75px;
+		*/
 
-      line-height: 75px; }
-
-
+      line-height: 32px; }
 
 /* =Footer
 

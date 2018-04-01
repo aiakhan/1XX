@@ -88,13 +88,15 @@ function init() {
 
     $.ajax({
         method: 'GET',
-        url: 'assets/data/menu.json',
+        url: 'http://me.hennatattoart.com/wp-json/wp-api-menus/v2/menus/2',
         dataType: 'json',
         success: function (data) {
+			$('nav').hide();
 
-            var menu = menuBuilder(data.menu);
+            var menu = menuBuilder(data.items);
 
-            $('nav').append(menu);
+            $('nav').html(menu).slideDown();
+			
 			$("#loaderDiv").fadeOut("slow");
 
         },
@@ -106,7 +108,6 @@ function init() {
 
 }
 
-
 function menuBuilder(obj) {
 
     var theMenu = '';
@@ -117,12 +118,11 @@ function menuBuilder(obj) {
 
         obj.forEach(function (item) {
 
-            theMenu = theMenu + '<li><a href="#">' + item.MenuName + '</a>';
+            theMenu = theMenu + '<li><a href="#">' + item.title + '</a>';
 
-            if (item.Menus.length > 0) {
+            if (item.children ) {
 
-                theMenu = theMenu + menuBuilder(item.Menus);
-
+                theMenu = theMenu + menuBuilder(item.children);
             }
 
             theMenu = theMenu + '</li>';

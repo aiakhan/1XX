@@ -37,7 +37,7 @@ function init() {
     });
 	    $.ajax({
         method: 'GET',
-		url: 'http://me.hennatattoart.com/wp-json/wp-api-menus/v2/menus/5?orderby=date&order=desc',
+		url: 'http://me.hennatattoart.com/wp-json/wp-api-menus/v2/menus/5',
 		dataType: 'json',
         success: function (data) {
             var menu = menuBuilder(data.items, 'genLinks', 'footer-ul');
@@ -50,9 +50,6 @@ function init() {
             console.log('all is not good');
         }
     });
-
-    getPosts();
-
 }
 function menuBuilder(obj, targetEl, classInfo) {
     var theMenu = '';
@@ -79,7 +76,7 @@ function getPage(obj) {
     $("#loaderDiv").fadeIn("slow");
     $.ajax({
         method: 'GET',
-        url: 'http://me.hennatattoart.com/wordpress/wp-json/wp/v2/pages/' + obj,
+        url: 'https://me.hennatattoart.com/wp-json/wp/v2/pages/' + obj,
         dataType: 'json',
         success: function (data) {
             var pgbuild = '';
@@ -102,27 +99,3 @@ function getPage(obj) {
 }
 
 
-function getPosts() {
-
-$.ajax({
-        method: 'GET',
-        url: 'http://$.ajax({
-        method: 'GET',
-        url: 'http://me.hennatattoart.com/wordpress/wp-json/wp/v2/posts?orderby=date&order=desc&per_page',
-        dataType: 'json',
-        success: function (data) {
-            $("#latestPosts").html('<p id="postLdr"><i class="fa fa-cogs"></i> Loading Posts</p>');
-            data.forEach(function (item) {
-
-                var myDate = new Date(item.date);
-
-                $("#latestPosts").prepend('<p>' + item.title.rendered + '<span>' + myDate.getMonth() + '-' + myDate.getDay() + '-' + myDate.getFullYear() + '</span></p>');
-
-            });
-            $("#postLdr").remove();
-        },
-        error: function () {
-            console.log('bad');
-        }
-    });
-}
